@@ -1,0 +1,58 @@
+.paragraph-title {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.article-lead {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 1em 0;
+  @media only screen and (min-width: $tablet) {
+    margin: 3em 0;
+  }
+  font-size: 0.9em;
+
+  &__logo {
+    width: 3.125rem;
+  }
+
+  &__company-name {
+    margin-bottom: 0;
+    color: $secondary-color;
+  }
+
+  &__company-name-large {
+    color: $primary-color;
+    font-size: 2em;
+  }
+}
+
+.article {
+  &__img {
+    @media only screen and (min-width: $tablet) {
+      width: 345px;
+    }
+    margin-bottom: 1em;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+  }
+
+  &__info {
+    margin-bottom: 1em;
+  }
+}
+
+.sources {
+  margin: 4em 0;
+
+  &__further-reading-list {
+    margin-left: 1em;
+  }
+}
