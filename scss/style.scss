@@ -86,11 +86,100 @@ img {
   display: block;
 }
 
+.business-name {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 1em 0;
+  @media only screen and (min-width: $tablet) {
+    margin: 3em 0;
+  }
+  font-size: 0.9em;
+
+  &__logo {
+    width: 3.125rem;
+  }
+
+  &__company-name {
+    margin-bottom: 0;
+    color: $secondary-color;
+  }
+
+  &__company-name-large {
+    color: $primary-color;
+    font-size: 2em;
+  }
+}
+
+.quote {
+  p {
+    font-size: 1.1em;
+    @media only screen and (min-width: 360px) {
+      font-size: 1.1em;
+    }
+    @media only screen and (min-width: $mobile) {
+      font-size: 1.1em;
+    }
+    @media only screen and (min-width: $mobile-large) {
+      font-size: 1.2em;
+    }
+    @media only screen and (min-width: $desktop) {
+      font-size: 1.4em;
+    }
+    line-height: 1.5;
+  }
+
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 10px;
+  background: rgba($tan-color, 0.5);
+  border-left: 10px solid $secondary-color;
+  font-size: 0.75em;
+
+  &__quote-text {
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 0;
+
+    &--author {
+      font-weight: bold;
+      font-style: normal;
+      text-align: right;
+
+      &::before {
+        content: '\2014\0020';
+      }
+    }
+  }
+}
+
+.form {
+  @include set-background-styles;
+  border: 1px solid #ddd;
+
+  &__logo,
+  &__submit-button {
+    display: block;
+    margin: 2rem auto;
+  }
+
+  &__logo {
+    @include logo-form-sizing;
+  }
+
+  &__submit-button {
+    margin-bottom: 0;
+  }
+}
+
 .input-group {
   position: relative;
 
   + .input-group {
     margin-top: 1.5em;
+    @media only screen and (min-width: $mobile-large) {
+      margin-top: 2.5em;
+    }
   }
 
   &__styles {
@@ -342,6 +431,12 @@ REPORT SECTION
   }
 }
 
+.report-2 {
+  border-top: 3px solid $secondary-color;
+  border-bottom: 3px solid $secondary-color;
+  padding: 10px 0;
+}
+
 /*********************************** 
 FINANCIAL FREEDOM SECTION
 ***********************************/
@@ -369,31 +464,6 @@ FINANCIAL FREEDOM SECTION
       font-size: 1.4em;
     }
     line-height: 1.5;
-  }
-
-  &__quote {
-    max-width: 600px;
-    margin: 10px auto;
-    padding: 10px;
-    background: rgba($tan-color, 0.5);
-    border-left: 10px solid $secondary-color;
-    font-size: 0.75em;
-  }
-
-  &__quote-text {
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 0;
-
-    &--author {
-      font-weight: bold;
-      font-style: normal;
-      text-align: right;
-
-      &::before {
-        content: '\2014\0020';
-      }
-    }
   }
 }
 
@@ -748,14 +818,14 @@ CONTACT SECTION
   @media only screen and (min-width: $desktop) {
     background: linear-gradient(
         rgba(256, 256, 256, 0.3),
-        rgba(256, 256, 256, 0.5)
+        rgba(256, 256, 256, 0.7)
       ),
       url('../img/deskop-beach-trail.jpg');
   }
   @media only screen and (min-width: $desktop-large) {
     background: linear-gradient(
-        rgba(256, 256, 256, 0.3),
-        rgba(256, 256, 256, 0.5)
+        rgba(256, 256, 256, 0.4),
+        rgba(256, 256, 256, 0.7)
       ),
       url('../img/desktop-large-beach-trail.jpg');
   }
@@ -801,16 +871,6 @@ CONTACT SECTION
 /*********************************** 
 CONTACT PAGE
 ***********************************/
-.input-group {
-  position: relative;
-
-  + .input-group {
-    @media only screen and (min-width: $mobile-large) {
-      margin-top: 2.5em;
-    }
-  }
-}
-
 .contact-page {
   &__video {
     display: block;
@@ -824,15 +884,7 @@ CONTACT PAGE
   }
 
   .contact-form {
-    @include set-background-styles;
-    border: 1px solid #ddd;
     display: none;
-
-    &__logo {
-      display: block;
-      margin: 0 auto;
-      @include logo-form-sizing;
-    }
 
     .input-group {
       &__styles {
@@ -846,6 +898,21 @@ CONTACT PAGE
         @media only screen and (min-width: $tablet) {
           font-size: 1rem;
         }
+      }
+    }
+
+    &__email {
+      @media only screen and (min-width: $mobile-large) {
+        margin-top: 9em;
+      }
+      @media only screen and (min-width: $tablet) {
+        margin-top: 7em;
+      }
+      @media only screen and (min-width: 992px) {
+        margin-top: 5.75em;
+      }
+      @media only screen and (min-width: 1200px) {
+        margin-top: 4.7em;
       }
     }
 
@@ -880,6 +947,10 @@ CONTACT PAGE
         margin: 1.5em 0;
         @media only screen and (min-width: $mobile-large) {
           margin: 0 auto;
+        }
+
+        .accredited-definition {
+          font-size: 0.75em;
         }
 
         label {
@@ -926,10 +997,54 @@ CONTACT PAGE
         }
       }
     }
+  }
+}
 
-    &__join {
-      display: block;
-      margin: 2rem auto;
+/*********************************** 
+FREE REPORT
+***********************************/
+.business-name-form {
+  margin-bottom: 0.25rem;
+}
+
+.free-report-form {
+  margin-top: 0;
+
+  &__title {
+    padding-top: 0;
+  }
+
+  &__info {
+    display: grid;
+    grid-gap: 1rem;
+    justify-content: center;
+    grid-template-areas:
+      'firstName'
+      'lastName'
+      'email'
+      'recaptcha ';
+    @media only screen and (min-width: $tablet) {
+      grid-template-areas: 'firstName lastName' 'email recaptcha ';
+    }
+
+    .input-group {
+      margin-top: 0;
+    }
+
+    .first-name-group {
+      grid-area: firstName;
+    }
+
+    .last-name-group {
+      grid-area: lastName;
+    }
+
+    .email-group {
+      grid-area: email;
+    }
+
+    .recaptcha {
+      grid-area: recaptcha;
     }
   }
 }

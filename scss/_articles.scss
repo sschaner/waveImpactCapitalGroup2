@@ -7,31 +7,6 @@
   font-weight: 700;
 }
 
-.article-lead {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  margin: 1em 0;
-  @media only screen and (min-width: $tablet) {
-    margin: 3em 0;
-  }
-  font-size: 0.9em;
-
-  &__logo {
-    width: 3.125rem;
-  }
-
-  &__company-name {
-    margin-bottom: 0;
-    color: $secondary-color;
-  }
-
-  &__company-name-large {
-    color: $primary-color;
-    font-size: 2em;
-  }
-}
-
 .article {
   &__img {
     @media only screen and (min-width: $tablet) {
