@@ -34,6 +34,10 @@ img {
   max-width: 100%;
 }
 
+ul {
+  margin-left: 1em;
+}
+
 .section-top {
   margin-top: 4rem;
 }
@@ -69,7 +73,7 @@ img {
 
 .video {
   width: 100%;
-  filter: drop-shadow(0.75em 0.75em 0.5em);
+  box-shadow: 0.75em 0.75em 0.5em;
 }
 
 .display-none {
@@ -186,6 +190,7 @@ img {
     display: block;
     margin: 0;
     padding: 0 1em;
+    width: 100%;
     background-color: #f3fafd;
     border: 2px solid $secondary-color;
     border-radius: 4px;
@@ -224,6 +229,21 @@ img {
     transform: translateY(25%);
     opacity: 0.5;
     transition: 0.2s linear;
+  }
+}
+
+table {
+  margin-bottom: 1em;
+
+  td,
+  th {
+    border: 1px solid $primary-color;
+    padding: 0.5rem;
+    background: rgba($secondary-color, 0.5);
+  }
+
+  tr:last-child {
+    background: rgba($secondary-color, 0.8);
   }
 }
 
@@ -354,12 +374,16 @@ SHOWCASE SECTION
     margin-bottom: 0;
   }
 
-  &__title {
-    font-size: 2em;
+  &__title-wave {
+    font-size: 3em;
   }
 
   &__title--large {
     font-size: 4em;
+  }
+
+  &__title-capital-group {
+    font-size: 1.75em;
   }
 
   &__subtitle {
@@ -435,13 +459,14 @@ REPORT SECTION
   border-top: 3px solid $secondary-color;
   border-bottom: 3px solid $secondary-color;
   padding: 10px 0;
+  width: 95%;
 }
 
 /*********************************** 
 FINANCIAL FREEDOM SECTION
 ***********************************/
 .financial-freedom {
-  height: 800px;
+  height: 850px;
   background: linear-gradient(
       rgba(256, 256, 256, 0.3),
       rgba(256, 256, 256, 0.7)
@@ -503,11 +528,11 @@ HOW SECTION
 }
 
 /*********************************** 
-ACQUISITIONS SECTION
+ACQUISITION SECTION
 ***********************************/
-.acquisitions {
+.acquisition {
   &__video {
-    margin: 0 auto;
+    margin: 25px auto;
     display: block;
     max-width: 650px;
   }
@@ -720,73 +745,169 @@ ARTICLES SECTION
 }
 
 /*********************************** 
+QUESTIONS AND ANSWES SECTION
+***********************************/
+.questions-and-answers {
+  margin-bottom: 4em;
+
+  .section-title {
+    padding-bottom: 1em;
+  }
+}
+
+.qu-container {
+  margin-bottom: 2em;
+
+  .answer::before {
+    display: block;
+    content: ' ';
+    margin-top: -32px;
+    height: 32px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .qa-list-item {
+    list-style-type: disc;
+  }
+
+  .qa-26 {
+    &__title {
+      margin-left: -1em;
+    }
+  }
+
+  .qa-27 {
+    &__no-education {
+      margin: 0;
+    }
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+}
+
+/*********************************** 
 TEAM SECTION
 ***********************************/
-.team__container {
-  @media only screen and (min-width: $tablet) {
+.team {
+  margin-bottom: 5rem;
+
+  &__container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
+    grid-template-areas:
+      'director'
+      'additionalPartners'
+      'morePartners';
 
-  .card {
     @media only screen and (min-width: $tablet) {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-    }
-    background-color: $tan-color;
-    border: none;
-
-    &__img {
-      display: block;
-      margin: 0 auto;
-      @media only screen and (min-width: $mobile-large) {
-        align-self: center;
-      }
-      border-radius: 10px;
+      grid-template-areas:
+        'director director additionalPartners'
+        'morePartners morePartners morePartners';
     }
 
-    &__content {
-      &--title {
-        margin-bottom: 0;
-      }
+    .director {
+      grid-area: director;
+      margin-bottom: 0;
+    }
 
-      &--subtitle {
+    .additional-partners {
+      grid-area: additionalPartners;
+      margin: 0 30px;
+
+      &__title {
         position: relative;
-      }
+        @media only screen and (min-width: $tablet) {
+          margin-top: 40px;
+        }
+        @media only screen and (min-width: 992px) {
+          margin-top: 44px;
+        }
 
-      &--subtitle::after {
-        content: '';
-        position: absolute;
-        top: 25px;
-        left: 0px;
-        width: 150px;
-        height: 2px;
-        background-color: $secondary-color;
-      }
-
-      &--description {
-        margin-top: 1em;
-
-        a {
-          color: $secondary-color;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 25px;
+          left: 0px;
+          width: 350px;
+          height: 2px;
+          background-color: $secondary-color;
+          @media only screen and (min-width: $tablet) {
+            width: 95%;
+            top: 50px;
+          }
+          @media only screen and (min-width: 992px) {
+            top: 25px;
+          }
         }
       }
+
+      ul {
+        margin: 1rem 0;
+      }
     }
 
-    #gynell-schaner {
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
+    .more-partners {
+      grid-area: morePartners;
+      font-size: 2em;
+      text-align: center;
+      color: $secondary-color;
+      @media only screen and (min-width: $tablet) {
+        margin-bottom: 20px;
+      }
     }
-  }
 
-  .more-partners {
-    grid-template-columns: 1fr;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    text-align: center;
-    color: $secondary-color;
+    .card {
+      @media only screen and (min-width: $tablet) {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+      }
+      background-color: $tan-color;
+      border: none;
+
+      &__img {
+        display: block;
+        margin: 0 auto;
+        @media only screen and (min-width: $mobile-large) {
+          align-self: center;
+        }
+        border-radius: 10px;
+      }
+
+      &__content {
+        &--title {
+          margin-bottom: 0;
+        }
+
+        &--subtitle {
+          position: relative;
+        }
+
+        &--subtitle::after {
+          content: '';
+          position: absolute;
+          top: 25px;
+          left: 0px;
+          width: 150px;
+          height: 2px;
+          background-color: $secondary-color;
+        }
+
+        &--description {
+          margin-top: 1em;
+
+          a {
+            color: $secondary-color;
+          }
+        }
+      }
+
+      #gynell-schaner {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+      }
+    }
   }
 }
 

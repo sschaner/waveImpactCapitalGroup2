@@ -59,7 +59,7 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/style.min.css" />
     <title>Wave Impact Capital Group</title>
   </head>
   <body id="home">
@@ -71,7 +71,7 @@
         <nav class="nav-container__nav">
           <ul class="nav-container__list">
             <li class="nav-container__item">
-              <a href="#videos" class="nav-container__link"
+              <a href="#acquisition" class="nav-container__link"
                 ><span class="nav-container__link-title">videos</span>
                 <span class="fa-stack nav-container__icon-stack">
                   <i
@@ -84,26 +84,26 @@
               </a>
             </li>
             <li class="nav-container__item">
-              <a href="#about" class="nav-container__link"
-                ><span class="nav-container__link-title">about</span
+              <a href="#articles" class="nav-container__link"
+                ><span class="nav-container__link-title">articles</span
                 ><span class="fa-stack nav-container__icon-stack">
                   <i
                     class="fas fa-circle fa-stack-2x nav-container__icon-background"
                   ></i>
                   <i
-                    class="fas fa-info fa-stack-1x fa-inverse nav-container__icon"
+                    class="fas fa-book-reader fa-stack-1x fa-inverse nav-container__icon"
                   ></i> </span
               ></a>
             </li>
             <li class="nav-container__item">
-              <a href="#team" class="nav-container__link"
-                ><span class="nav-container__link-title">team</span
+              <a href="#about" class="nav-container__link"
+                ><span class="nav-container__link-title">company</span
                 ><span class="fa-stack nav-container__icon-stack">
                   <i
                     class="fas fa-circle fa-stack-2x nav-container__icon-background"
                   ></i>
                   <i
-                    class="fas fa-users fa-stack-1x fa-inverse nav-container__icon"
+                    class="fas fa-building fa-stack-1x fa-inverse nav-container__icon"
                   ></i> </span
               ></a>
             </li>
@@ -136,9 +136,13 @@
         ></video>
       </div>
       <div class="showcase__content">
-        <h2 class="showcase__title">wave</h2>
-        <h2 class="showcase__title showcase__title--large">impact</h2>
-        <h2 class="showcase__title">capital group</h2>
+        <h2 class="showcase__title showcase__title-wave">wave</h2>
+        <h2 class="showcase__title showcase__title showcase__title--large">
+          impact
+        </h2>
+        <h2 class="showcase__title showcase__title-capital-group">
+          capital group
+        </h2>
         <h3 class="showcase__subtitle">
           investing in multifamily
           <span class="showcase__subtitle-next-line">real estate</span>
@@ -239,7 +243,7 @@
       </div>
     </section>
 
-    <section id="acquisitions" class="acquisitions">
+    <section id="acquisition" class="acquisition">
       <h1 class="section-title">Our Process and Partners</h1>
       <div class="container videos__container">
         <p class="text-center">
@@ -248,14 +252,14 @@
           partner with to make this possible.
         </p>
         <video
-          class="video acquisitions__video"
-          poster="img/wave-impact-capital-group-thumbnail-acquisitions.jpg"
+          class="video acquisition__video"
+          poster="img/wave-impact-capital-group-thumbnail-acquisition-process.jpg"
           controls
           playsinline
           disablepictureinpicture
           controlslist="nodownload"
         >
-          <source src="process-final-video.mp4" type="video/mp4" />
+          <source src="acquisition-process.mp4" type="video/mp4" />
           Sorry, your browser doesn't support embedded videos.
         </video>
       </div>
@@ -423,7 +427,9 @@
               major firms that stand out due to number of clients and amount in
               assets...
             </p>
-            <a href="#" class="btn button">Read more</a>
+            <a href="./articles/stock-market-truth.html" class="btn button"
+              >Read more</a
+            >
           </div>
         </div>
 
@@ -444,6 +450,13 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section id="questions-and-answers" class="questions-and-answers container">
+      <h1 class="section-title">Questions and Answers</h1>
+      <p class="text-center">
+        <a href="questions-and-answers.html">Get all your questions answered</a>
+      </p>
     </section>
 
     <section id="report" class="report report-2 container">
@@ -507,7 +520,7 @@
     <section id="team" class="team section-top">
       <h1 class="section-title">Meet the Partners</h1>
       <div class="container team__container">
-        <div class="card">
+        <div class="card director">
           <picture id="gynell-schaner">
             <source
               media="(max-width: 959px)"
@@ -524,19 +537,41 @@
             <h3 class="secondary-title">director, investor, syndicator</h3>
             <h5 class="card__content--subtitle">Gynell Schaner</h5>
             <p class="card__content--description">
-              My love for real estate investing was born when I read
-              <em>Rich Dad, Poor Dad</em> by Robert Kiyosaki as a teen. I then
-              went on to earn a degree in Personal Financial Planning from the
-              best finance program in the country. Since then, I have constantly
-              sought education in the mindset and practice of the investor with
-              a focus on multifamily. Wave Impact Capial Group is the second
-              real estate investor company I have created, with the first
+              My love for real estate investing started when I was a teen and
+              read <em>Rich Dad, Poor Dad</em> by Robert Kiyosaki. I then went
+              on to earn a degree in Personal Financial Planning from Haworth
+              College of Business at Western Michigan University, which, at that
+              time, had the best finance program in the country. Since then, I
+              have constantly sought out education on the mindset and financial
+              practices of the wealthy. Wave Impact Capital Group is the second
+              real estate investing company I have created, with the first
               currently earning 36% profits on many of its assets.
             </p>
           </div>
         </div>
 
-        <div class="card more-partners">
+        <div class="additional-partners">
+          <h5 class="additional-partners__title">
+            Great Companies We Team Up With
+          </h5>
+          <ul>
+            <li>
+              <b>Anderson Business Associates</b> — real estate attorneys ,
+              CPAs, business mentors
+            </li>
+            <li>
+              <b>Heritage Construction and Consulting Services</b> — physical
+              due diligence
+            </li>
+            <li>
+              <b>Dugan Kelley of Kelley Clarke</b> — SEC attorney, contracts,
+              escrow accounts, closing
+            </li>
+            <li><b>Madison Specs</b> — cost segregation studies</li>
+          </ul>
+        </div>
+
+        <div class="more-partners">
           <p>Contact us to learn about our other partners</p>
         </div>
         <!-- <div class="card">
@@ -711,12 +746,27 @@
         </a>
 
         <div class="contact__secondary">
-          <h5 class="text-center">For questions or comments</h5>
+          <h5 class="text-center">Connect With Us</h5>
           <div class="contact__secondary--icons">
             <a href="mailto:schanerrealestate@gmail.com">
               <span class="fa-stack">
                 <i class="fa fa-circle fa-stack-2x icon-background"></i>
                 <i class="fas fa-envelope fa-stack-1x icon-link"></i>
+              </span>
+            </a>
+            <a href="mailto:schanerrealestate@gmail.com" target="_blank">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                <i class="fab fa-facebook-f fa-stack-1x icon-link"></i>
+              </span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gynell-schaner-135998194/"
+              target="_blank"
+            >
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                <i class="fab fa-linkedin-in fa-stack-1x icon-link"></i>
               </span>
             </a>
           </div>
