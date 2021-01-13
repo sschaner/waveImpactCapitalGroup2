@@ -748,11 +748,11 @@ ARTICLES SECTION
 QUESTIONS AND ANSWES SECTION
 ***********************************/
 .questions-and-answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 4em;
-
-  .section-title {
-    padding-bottom: 1em;
-  }
 }
 
 .qu-container {
