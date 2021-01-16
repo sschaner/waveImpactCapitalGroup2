@@ -846,13 +846,17 @@ TEAM SECTION
       ul {
         margin: 1rem 0;
       }
+
+      &__learn-more {
+        color: $secondary-color;
+      }
     }
 
     .more-partners {
       grid-area: morePartners;
       font-size: 2em;
       text-align: center;
-      color: $secondary-color;
+
       @media only screen and (min-width: $tablet) {
         margin-bottom: 20px;
       }
