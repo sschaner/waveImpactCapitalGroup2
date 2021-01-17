@@ -92,3 +92,27 @@ const articlesToggle = function () {
     articlesToggleBtn.innerHTML = 'More articles';
   }
 };
+
+Player.on('progress', function () {
+  // Get current video seek time
+  let currentTime = Player.currentTime();
+
+  if (lastTime !== currentTime) {
+    lastTime = currentTime;
+  } else if (myPlayer.paused() === false) {
+    buffered = false;
+    bufferPause = true;
+    lastBuffer = Player.bufferedPercent();
+  } else if (
+    !buffered &&
+    (Player.bufferedPercent() - lastBuffer > 0 ||
+      Player.bufferedPercent() > 0.1)
+  ) {
+    buffered = true;
+
+    // Resume playing if an additional 10% has been buffered
+    if (bufferPause) {
+      Player.play();
+    }
+  }
+});
