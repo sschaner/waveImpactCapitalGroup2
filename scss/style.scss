@@ -1,4 +1,4 @@
-@import 'config';
+@import "config";
 
 * {
   box-sizing: border-box;
@@ -151,7 +151,7 @@ ul {
       text-align: right;
 
       &::before {
-        content: '\2014\0020';
+        content: "\2014\0020";
       }
     }
   }
@@ -417,7 +417,7 @@ REPORT SECTION
     width: 100px;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -471,7 +471,7 @@ FINANCIAL FREEDOM SECTION
       rgba(256, 256, 256, 0.3),
       rgba(256, 256, 256, 0.7)
     ),
-    url('../img/skyline.jpg');
+    url("../img/skyline.jpg");
   background-size: cover;
 
   p {
@@ -670,21 +670,21 @@ ARTICLES SECTION
     display: grid;
     grid-gap: 3em;
     grid-template-areas:
-      'article1'
-      'article2'
-      'article3'
-      'article4';
+      "article1"
+      "article2"
+      "article3"
+      "article4";
 
     @media only screen and (min-width: $mobile-large) {
       grid-template-areas:
-        'article1 article2'
-        'article3 article4';
+        "article1 article2"
+        "article3 article4";
     }
 
     @media only screen and (min-width: $desktop) {
       grid-template-areas:
-        'article1 article2 article3'
-        'article4   ...      ...';
+        "article1 article2 article3"
+        "article4   ...      ...";
     }
   }
 
@@ -721,7 +721,7 @@ ARTICLES SECTION
   }
 }
 
-@import 'articles';
+@import "articles";
 
 .terms-container {
   display: grid;
@@ -760,7 +760,7 @@ QUESTIONS AND ANSWES SECTION
 
   .answer::before {
     display: block;
-    content: ' ';
+    content: " ";
     margin-top: -32px;
     height: 32px;
     visibility: hidden;
@@ -797,14 +797,14 @@ TEAM SECTION
   &__container {
     display: grid;
     grid-template-areas:
-      'director'
-      'additionalPartners'
-      'morePartners';
+      "director"
+      "additionalPartners"
+      "morePartners";
 
     @media only screen and (min-width: $tablet) {
       grid-template-areas:
-        'director director additionalPartners'
-        'morePartners morePartners morePartners';
+        "director director additionalPartners"
+        "morePartners morePartners morePartners";
     }
 
     .director {
@@ -826,7 +826,7 @@ TEAM SECTION
         }
 
         &::after {
-          content: '';
+          content: "";
           position: absolute;
           top: 25px;
           left: 0px;
@@ -889,7 +889,7 @@ TEAM SECTION
         }
 
         &--subtitle::after {
-          content: '';
+          content: "";
           position: absolute;
           top: 25px;
           left: 0px;
@@ -925,34 +925,34 @@ CONTACT SECTION
       rgba(256, 256, 256, 0.6),
       rgba(256, 256, 256, 0.4)
     ),
-    url('../img/mobile-beach-trail.webp');
+    url("../img/mobile-beach-trail.webp");
   @media only screen and (min-width: $mobile-large) {
     background: linear-gradient(
         rgba(256, 256, 256, 0.3),
         rgba(256, 256, 256, 0.5)
       ),
-      url('../img/mobile-large-beach-trail.webp');
+      url("../img/mobile-large-beach-trail.webp");
   }
   @media only screen and (min-width: $tablet) {
     background: linear-gradient(
         rgba(256, 256, 256, 0.3),
         rgba(256, 256, 256, 0.5)
       ),
-      url('../img/beach-trail.webp');
+      url("../img/beach-trail.webp");
   }
   @media only screen and (min-width: $desktop) {
     background: linear-gradient(
         rgba(256, 256, 256, 0.3),
         rgba(256, 256, 256, 0.7)
       ),
-      url('../img/deskop-beach-trail.jpg');
+      url("../img/deskop-beach-trail.jpg");
   }
   @media only screen and (min-width: $desktop-large) {
     background: linear-gradient(
         rgba(256, 256, 256, 0.4),
         rgba(256, 256, 256, 0.7)
       ),
-      url('../img/desktop-large-beach-trail.jpg');
+      url("../img/desktop-large-beach-trail.jpg");
   }
   background-size: cover;
 
@@ -1091,22 +1091,22 @@ CONTACT PAGE
             font-variant: normal;
             text-rendering: auto;
             -webkit-font-smoothing: antialiased;
-            font-family: 'Font Awesome 5 Free';
+            font-family: "Font Awesome 5 Free";
             font-weight: 900;
             margin-right: 5px;
           }
 
-          input[type='checkbox'] {
+          input[type="checkbox"] {
             display: none;
 
             + .label-text::before {
-              content: '\f0c8';
+              content: "\f0c8";
               color: $secondary-color;
               font-size: 1.6em;
             }
 
             &:checked + .label-text::before {
-              content: '\f14a';
+              content: "\f14a";
               animation: tick 180ms ease-in;
             }
           }
@@ -1144,12 +1144,12 @@ FREE REPORT
     grid-gap: 1rem;
     justify-content: center;
     grid-template-areas:
-      'firstName'
-      'lastName'
-      'email'
-      'recaptcha ';
+      "firstName"
+      "lastName"
+      "email"
+      "recaptcha ";
     @media only screen and (min-width: $tablet) {
-      grid-template-areas: 'firstName lastName' 'email recaptcha ';
+      grid-template-areas: "firstName lastName" "email recaptcha ";
     }
 
     .input-group {
