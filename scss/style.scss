@@ -1,4 +1,6 @@
 @import "config";
+@import "articles";
+@import "contact";
 
 * {
   box-sizing: border-box;
@@ -330,6 +332,10 @@ header {
   opacity: 0;
 }
 
+.main-content {
+  position: relative;
+}
+
 /*********************************** 
 SHOWCASE SECTION
 ***********************************/
@@ -401,28 +407,45 @@ SHOWCASE SECTION
 REPORT SECTION
 ***********************************/
 .report {
-  margin: 5px auto;
-  display: flex;
-  flex-direction: column;
+  margin: 10px auto;
+  // display: flex;
+  // flex-direction: column;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas:
+    "topSecrets"
+    "callToAction";
+
   @media only screen and (min-width: $mobile-large) {
-    flex-direction: row;
-    justify-content: space-evenly;
+    grid-template-areas: "topSecrets callToAction";
   }
-  justify-content: center;
-  align-items: center;
-  @include set-font-style-titles;
+  @media only screen and (min-width: $desktop) {
+    width: 60%;
+  }
+  // @media only screen and (min-width: $mobile-large) {
+  //   flex-direction: row;
+  //   justify-content: space-evenly;
+  // }
+  // justify-content: center;
+  // align-items: center;
 
   .top-secrets {
+    grid-area: topSecrets;
     position: relative;
     width: 100px;
+    margin: 0 auto;
+
+    &__img {
+      @media only screen and (min-width: $mobile-large) {
+        @include center-hor-and-vert-abs;
+      }
+    }
 
     &::after {
       content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      @include center-hor-and-vert-abs;
+      width: 100px;
+      height: 100px;
       background-color: #fff;
       opacity: 0.5;
       border-radius: 50%;
@@ -441,12 +464,18 @@ REPORT SECTION
   }
 
   .call-to-action {
+    grid-area: callToAction;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 10px;
     @media only screen and (min-width: $mobile-large) {
       margin-top: 0;
     }
     &__title {
       margin: 0;
+      @include set-font-style-titles;
     }
 
     &__button {
@@ -721,8 +750,6 @@ ARTICLES SECTION
   }
 }
 
-@import "articles";
-
 .terms-container {
   display: grid;
   grid-template-columns: repeat(1 fr);
@@ -819,26 +846,26 @@ TEAM SECTION
       &__title {
         position: relative;
         @media only screen and (min-width: $tablet) {
-          margin-top: 40px;
+          margin-top: 15px;
         }
-        @media only screen and (min-width: 992px) {
-          margin-top: 44px;
-        }
+        margin-left: -15px;
 
         &::after {
           content: "";
           position: absolute;
-          top: 25px;
+          top: 75px;
           left: 0px;
-          width: 350px;
+          width: 100%;
           height: 2px;
           background-color: $secondary-color;
-          @media only screen and (min-width: $tablet) {
-            width: 95%;
+          @media only screen and (min-width: 519px) {
             top: 50px;
           }
-          @media only screen and (min-width: 992px) {
-            top: 25px;
+          @media only screen and (min-width: $tablet) {
+            top: 75px;
+          }
+          @media only screen and (min-width: 1200px) {
+            top: 50px;
           }
         }
       }
@@ -993,135 +1020,18 @@ CONTACT SECTION
   }
 }
 
-/*********************************** 
-CONTACT PAGE
-***********************************/
-.contact-page {
-  &__video {
-    display: block;
-    max-width: 470px;
-    margin: 0 auto;
+.footer {
+  position: absolute;
+  bottom: 36px;
+  @media only screen and (min-width: $tablet) {
+    bottom: 1rem;
   }
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
 
-  &__joining {
-    display: block;
-    margin: 2rem auto 0;
-  }
-
-  .contact-form {
-    display: none;
-
-    .input-group {
-      &__styles {
-        width: 100%;
-      }
-
-      &__placeholder {
-        @media only screen and (min-width: $mobile-large) {
-          font-size: 0.9rem;
-        }
-        @media only screen and (min-width: $tablet) {
-          font-size: 1rem;
-        }
-      }
-    }
-
-    &__email {
-      @media only screen and (min-width: $mobile-large) {
-        margin-top: 9em;
-      }
-      @media only screen and (min-width: $tablet) {
-        margin-top: 7em;
-      }
-      @media only screen and (min-width: 992px) {
-        margin-top: 5.75em;
-      }
-      @media only screen and (min-width: 1200px) {
-        margin-top: 4.7em;
-      }
-    }
-
-    &__questions {
-      margin-top: 1.5em;
-      @media only screen and (min-width: $mobile-large) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 2em;
-      }
-
-      .personal-info {
-        &__name {
-          @media only screen and (min-width: $mobile-large) {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 0.5em;
-          }
-
-          :last-child {
-            @media only screen and (min-width: $mobile-large) {
-              margin-top: 0;
-            }
-          }
-        }
-      }
-
-      .yes-no {
-        display: flex;
-        flex-direction: column;
-        text-align: left;
-        margin: 1.5em 0;
-        @media only screen and (min-width: $mobile-large) {
-          margin: 0 auto;
-        }
-
-        .accredited-definition {
-          font-size: 0.75em;
-        }
-
-        label {
-          cursor: pointer;
-
-          + label {
-            margin-top: 1.5rem;
-          }
-
-          .icon::before {
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            margin-right: 5px;
-          }
-
-          input[type="checkbox"] {
-            display: none;
-
-            + .label-text::before {
-              content: "\f0c8";
-              color: $secondary-color;
-              font-size: 1.6em;
-            }
-
-            &:checked + .label-text::before {
-              content: "\f14a";
-              animation: tick 180ms ease-in;
-            }
-          }
-
-          .label-text-long {
-            @media only screen and (min-width: $mobile-large) {
-              display: flex;
-            }
-            @media only screen and (min-width: 992px) {
-              display: inline-block;
-            }
-          }
-        }
-      }
-    }
+  &__copyright {
+    margin: 0;
   }
 }
 
@@ -1133,7 +1043,7 @@ FREE REPORT
 }
 
 .free-report-form {
-  margin-top: 0;
+  margin: 0 auto;
 
   &__title {
     padding-top: 0;
