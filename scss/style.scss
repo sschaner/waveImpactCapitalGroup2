@@ -772,7 +772,7 @@ ARTICLES SECTION
 }
 
 /*********************************** 
-QUESTIONS AND ANSWES SECTION
+QUESTIONS AND ANSWERS SECTION
 ***********************************/
 .questions-and-answers {
   display: flex;
@@ -946,7 +946,10 @@ TEAM SECTION
 CONTACT SECTION
 ***********************************/
 .contact {
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 640px;
   padding-bottom: 3rem;
   background: linear-gradient(
       rgba(256, 256, 256, 0.6),
@@ -966,6 +969,7 @@ CONTACT SECTION
         rgba(256, 256, 256, 0.5)
       ),
       url("../img/beach-trail.webp");
+    height: 514px;
   }
   @media only screen and (min-width: $desktop) {
     background: linear-gradient(
@@ -1021,14 +1025,8 @@ CONTACT SECTION
 }
 
 .footer {
-  position: absolute;
-  bottom: 36px;
-  @media only screen and (min-width: $tablet) {
-    bottom: 1rem;
-  }
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: fit-content;
+  display: flex;
+  justify-content: center;
 
   &__copyright {
     margin: 0;
